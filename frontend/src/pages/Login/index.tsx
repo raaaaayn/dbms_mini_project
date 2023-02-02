@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { useMutation } from 'react-query';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 
-import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
-import login from '@/services/login';
+import login from "@/services/login";
 
 const LoginPage = () => {
-  const [username, set_username] = useState('');
-  const [password, set_password] = useState('');
+  const [username, set_username] = useState("");
+  const [password, set_password] = useState("");
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const LoginPage = () => {
             { username, password },
             {
               onSuccess: () => {
-                navigate('/');
+                navigate("/");
               },
             },
           );

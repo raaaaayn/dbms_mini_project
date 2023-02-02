@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { host, wshost } from '@/config/config';
+import { host, wshost } from "@/config/config";
 
 const useWebsocket = () => {
   const [message, set_message] = useState<any>(null);
@@ -19,7 +19,7 @@ const useWebsocket = () => {
     if (enabled) {
       websocket = new WebSocket(`${wshost}/ws`);
       websocket.onopen = () => {
-        console.log('connected');
+        console.log("connected");
       };
       websocket.onmessage = (event) => {
         console.log({ data: event.data });

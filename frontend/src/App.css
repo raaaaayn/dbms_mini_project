@@ -35,7 +35,7 @@
 .post-modal-button {
   height: 80%;
   width: 100%;
-  background-color: 'black';
+  background-color: "black";
   opacity: 0;
   position: absolute;
   z-index: 1;

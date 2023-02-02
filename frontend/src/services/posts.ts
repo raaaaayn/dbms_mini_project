@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-import { host } from '@/config/config';
+import { host } from "@/config/config";
 
 const post_new = async (post: { content: string; image_url: string }) => {
   const res = await axios.post(`${host}/post/new`, post);

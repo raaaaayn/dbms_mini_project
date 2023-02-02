@@ -1,7 +1,7 @@
-import { FC, useState } from 'react';
-import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { FC, useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
-import { Send } from '@mui/icons-material';
+import { Send } from "@mui/icons-material";
 import {
   Avatar,
   Button,
@@ -15,24 +15,24 @@ import {
   ListItemText,
   TextField,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
 
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import { post_comment } from '@/services/comments';
-import { get_post_details } from '@/services/posts';
+import { post_comment } from "@/services/comments";
+import { get_post_details } from "@/services/posts";
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
   minWidth: 0,
 });
 
 const AddComment: FC<{ post_id: string }> = ({ post_id }) => {
   const queryClient = useQueryClient();
-  const [comment, set_comment] = useState('');
+  const [comment, set_comment] = useState("");
 
   const comment_new = useMutation(post_comment);
 
@@ -45,12 +45,12 @@ const AddComment: FC<{ post_id: string }> = ({ post_id }) => {
           { post_id, comment },
           {
             onSuccess: () => {
-              queryClient.invalidateQueries('post');
-              queryClient.invalidateQueries('user');
+              queryClient.invalidateQueries("post");
+              queryClient.invalidateQueries("user");
             },
           },
         );
-        set_comment('');
+        set_comment("");
       }}
     >
       <Grid container alignItems="center" spacing={1} wrap="nowrap">
@@ -68,7 +68,7 @@ const AddComment: FC<{ post_id: string }> = ({ post_id }) => {
 };
 
 const PostComponent: FC<{ post_id: string }> = ({ post_id }) => {
-  const { data, isLoading } = useQuery('post', () => get_post_details(post_id as string));
+  const { data, isLoading } = useQuery("post", () => get_post_details(post_id as string));
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -89,7 +89,7 @@ const PostComponent: FC<{ post_id: string }> = ({ post_id }) => {
           <Grid item zeroMinWidth={true}>
             <List
               className="comments"
-              sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
             >
               <Typography variant="h4" component="h2">
                 Comments
@@ -104,7 +104,7 @@ const PostComponent: FC<{ post_id: string }> = ({ post_id }) => {
                     <ListItemText
                       primary={
                         <Typography
-                          sx={{ display: 'inline' }}
+                          sx={{ display: "inline" }}
                           component="span"
                           variant="body2"
                           fontWeight="bold"
@@ -115,7 +115,7 @@ const PostComponent: FC<{ post_id: string }> = ({ post_id }) => {
                       secondary={
                         <>
                           <Typography
-                            sx={{ display: 'inline' }}
+                            sx={{ display: "inline" }}
                             component="span"
                             variant="body2"
                             color="gray"
@@ -126,7 +126,7 @@ const PostComponent: FC<{ post_id: string }> = ({ post_id }) => {
                       }
                     />
                   </ListItem>
-                  <Divider variant="inset" component="li" key={comment.comment + idx + '-div'} />
+                  <Divider variant="inset" component="li" key={comment.comment + idx + "-div"} />
                 </>
               ))}
               <AddComment post_id={data.post.id} />
