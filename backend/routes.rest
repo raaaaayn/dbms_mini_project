@@ -1,0 +1,58 @@
+http://localhost:3001
+POST /register
+{
+	"username":"testuser",
+	"name":"test user",
+	"dob":"26-aug-2002",
+	"email":"test@email.com",
+	"password":"abcdefgh",
+	"account_type":"public"
+}
+
+http://localhost:3001
+POST /login
+{
+	"username":"testuser",
+	"password":"abcdefgh"
+}
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+GET /user
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+GET /user/all
+
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+POST /post/new
+["https://images.unsplash.com/photo-1646457417455-77a66a9fcf34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE0Nnx0b3dKWkZza3BHZ3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"]
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+POST /post/like
+{
+	"post_id": 15
+}
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+POST /post/unlike
+{
+	"post_id": 14
+}
+
+
+http://localhost:3001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+POST /comment/new
+{
+	"post_id":1,
+	"comment":"Test"
+}
+
+ws://localhost:3001/ws
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwibmFtZSI6InRlc3QgdXNlciIsImlhdCI6MTY3NDAyODMyN30.aO51qz05JuKVNXrdEc2p1bsQa7CtGgiyrPxUxi77G_4
+GET 

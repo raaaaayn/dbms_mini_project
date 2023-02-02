@@ -1,0 +1,43 @@
+.home-page {
+  height: 100vh;
+}
+
+.home-content {
+  height: 100%;
+}
+
+.router-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-post {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex-shrink: 1;
+  flex-grow: 1;
+  height: 99%;
+}
+
+.write-comment-container {
+  margin-top: auto;
+}
+
+.image-list {
+  position: relative;
+}
+.post-modal-button {
+  height: 80%;
+  width: 100%;
+  background-color: 'black';
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}

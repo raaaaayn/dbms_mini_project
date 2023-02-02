@@ -1,0 +1,13 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-inputs {
+  max-width: max(30rem, 50%);
+}
+
+.error-field {
+  color: red;
+}
