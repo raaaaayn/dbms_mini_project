@@ -95,3 +95,5 @@ ALTER TABLE
     follower_tracker ADD CONSTRAINT follower_tracker_username_foreign FOREIGN KEY("username") REFERENCES "user"("username");
 ALTER TABLE
     follower_tracker ADD CONSTRAINT follower_tracker_folower_foreign FOREIGN KEY(folower) REFERENCES "user"("username");
+
+CREATE PUBLICATION alltables FOR ALL TABLES;
