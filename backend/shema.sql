@@ -34,7 +34,7 @@ CREATE TABLE comments(
 CREATE TABLE likes(
     post_id BIGINT NOT NULL,
     liked_by VARCHAR(255) NOT NULL,
-		UNIQUE(post_id,liked_by)
+		PRIMARY KEY(post_id,liked_by)
 );
 
 CREATE TABLE chat(
